@@ -32,8 +32,8 @@ public class DiceRoll
 		} else {
 			System.out.println("The number of roll cannot be 0.");
 		}
-		System.out.println("Your total points is " + total);2
-		
+		System.out.println("Your total points is " + total);
+
 	}
 	
 	static void printDie(int roll){
