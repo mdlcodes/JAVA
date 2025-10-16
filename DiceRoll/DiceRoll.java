@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 public class DiceRoll 
 {
@@ -27,11 +27,13 @@ public class DiceRoll
 				printDie(roll);
 				System.out.println("You got: " + roll);
 				total = total + roll;
-				System.out.println("Your total points is " + total);
+				
 			}
 		} else {
 			System.out.println("The number of roll cannot be 0.");
 		}
+		System.out.println("Your total points is " + total);2
+		
 	}
 	
 	static void printDie(int roll){
