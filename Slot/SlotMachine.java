@@ -12,7 +12,7 @@ public class SlotMachine{
 
         //Welcome Message
         System.out.println("The JAVA SLOT GAME");
-        System.out.println("🍕 🍔 🍟 🥚 🥐");
+        System.out.println("  1  2  3  4  5");
 
         //CHECK IF BAL IS GREATER THAN 0
         while(balance > 0){
@@ -20,12 +20,18 @@ public class SlotMachine{
             System.out.println("Enter your bet: ");
             bet = sc.nextInt();
                 
-                if(balance < bet){
-                    System.out.println("INSUFFICIENT BALANCE");
-                } else if(bet <= 0){
-                    System.out.println("Your bet SHOOULD be greater the 0. ");
-                }
+            if(balance < bet){
+                System.out.println("INSUFFICIENT BALANCE");
+                continue;
+            } 
+            else if(bet <= 0){
+                System.out.println("Your bet SHOULD be greater the 0. ");
+                continue;
+            } else 
+                balance -= bet;
+               
         }
-
+        
     }
+
 }
