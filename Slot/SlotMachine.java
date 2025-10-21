@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class SlotMachine{
@@ -16,7 +17,7 @@ public class SlotMachine{
 
         //CHECK IF BAL IS GREATER THAN 0
         while(balance > 0){
-            System.out.println("Your balance is :" + balance);
+            System.out.println("YOur balance is : " + balance);
             System.out.println("Enter your bet: ");
             bet = sc.nextInt();
                 
@@ -31,7 +32,19 @@ public class SlotMachine{
                 balance -= bet;
                
         }
+        System.out.println("spinning...");
+        spinRow();
         
     }
 
+    static String[] spinRow(){
+
+        String[] symbols = {"1", "2", "3", "4", "5"};
+        String[] row = new String[3];
+        Random random = new Random();
+
+        System.out.println(symbols[1]);
+
+        return new String[0];
+    }
 }
