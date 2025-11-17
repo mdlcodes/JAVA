@@ -1,40 +1,56 @@
 import java.util.Scanner;
-public class Repeated {
-    public static void main(String[] args){
 
-        //Get the number of inputs
-        //Get inputs
-            //arrays
-        //Check for repeated inputs
+public class Repeated{
+    public static void main(String[] args){
+        //ask for string length
+        //accept string
+        //check for repeated string
 
         Scanner sc = new Scanner(System.in);
-        int num;
-        int ctr = 1;
+        int l;
 
-        System.out.println("Enter the length of your inputs: ");
-        num = sc.nextInt();
+        System.out.println("Enter your String length: ");
+        l = sc.nextInt();
 
-        String[] userInputs = new String[num];
+        String userInput[]  = new String[l];
 
-        for(int i = 0; i < num; i++){
-            System.out.println("Enter your text " + (i+1) + ": ");
-            userInputs[i] = sc.next();
+        for(int i = 0; i < userInput.length; i++){
+            System.out.println("Enter your text: ");
+            userInput[i] = sc.next();
         }
 
-        for(int j = 0; j < userInputs.length; j++){
-           if(j < userInputs.length){
-             // input = 5 ------ 1-2 2-3 3-4 
-             // 5 == 5? check  4-5
-            if(userInputs[j]. equals(userInputs[j + 1])){
-                ctr++;
-             }
-           } else if(j == userInputs.length){
-                if(userInputs[j]. equals(userInputs[j - 1])){
-                ctr++;
-             }
+        countRepeat(userInput);
+    }
+    public static void countRepeat(String[] inputs){
+        boolean alreadyChecked[] = new  boolean[inputs.length];
+        boolean isRepeated = false;   
+
+
+        for(int i = 0; i < inputs.length; i++){
+            
+            if(alreadyChecked[i] == true){
+                continue;
+            }
+
+            int count = 1;
+
+            for(int j = i + 1; j < inputs.length; j++){
+                if(inputs[i].equals(inputs[j])){
+                    count++;
+                    alreadyChecked[j] = true;
+                }
+            }
+
+            if(count > 1){
+                System.out.println("The String " + inputs[i] + " appears " + count + " times.");
+                isRepeated = true;
             }
         }
-        System.out.println(ctr);
+
+        if(!isRepeated){
+            System.out.println("There is no repetition. ");
+
+        }
+
     }
-    
 }
